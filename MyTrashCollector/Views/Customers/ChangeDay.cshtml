@@ -1,0 +1,28 @@
+﻿@model MyTrashCollector.Models.Address
+
+@{
+    ViewBag.Title = "ChangeDay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ready For a Change?</h2>
+<h2>Your current pick-up day is: @Model.Day.PickUpDay</h2>
+
+
+@using (Html.BeginForm("ChangeDay", "Customers"))
+{
+    <div class="form-group">
+        <div class="col-md-6">
+            @Html.DropDownListFor(model => model.Day.PickUpDay, new SelectList(Enum.GetValues(typeof(MyTrashCollector.Models.Day.DayList))))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-0 col-md-10">
+            <input type="submit" class="btn btn-primary"/>
+        </div>
+    </div>
+
+    <img src="https://media.tenor.co/images/41e7d761b96398a391c2cc24ba78359c/raw" style="width: 100%">
+
+}

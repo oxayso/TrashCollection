@@ -1,0 +1,24 @@
+﻿@model MyTrashCollector.Models.Address
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutWorker.cshtml";
+
+
+}
+
+<h2>Trash Collector's Pick Ups for Today</h2>
+
+
+@using (Html.BeginForm("WorkerRoute", "Worker"))
+{
+    <div class="form-group">
+        @Html.LabelFor(a => a.ZipCode)
+        @Html.TextBoxFor(a => a.ZipCode, new {@class="form-control"})
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <img src="http://2.bp.blogspot.com/-UJHtean2OJM/URPy3gHRzEI/AAAAAAAABgo/84WTpuJl1Ms/s1600/trash-men.jpg" style="width: 100%">
+
+
+}

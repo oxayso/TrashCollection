@@ -1,0 +1,28 @@
+﻿@model MyTrashCollector.Models.Address
+
+@{
+    ViewBag.Title = "SuspendService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Going On Vacation?</h2>
+
+@using (Html.BeginForm("SuspendService", "Customers"))
+{
+    <h3>Choose The Period Of Time To Suspend Your Service</h3>
+    <div class="form-inline">
+        <h2>From</h2>
+        <input type="date" name="VacationStart"/>
+    </div>
+
+    <div class="form-inline">
+        <h2>To</h2>
+        <input type="date" name="VacationEnd" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirm</button>
+
+    <img src="https://media.giphy.com/media/CM2G0NiOzjWjC/giphy.gif" style="width: 100%">
+
+}
+
